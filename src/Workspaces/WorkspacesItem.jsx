@@ -7,7 +7,7 @@ const WorkspacesItem = ({title,miembros,id}) => {
     <div className='ContenedorPrincipalItem'>
       <div className='ContenedorWorkspaceItem'>
         <div className='avatarWork'>
-          <img  className='avatar' src='/avatar_slack.png' alt="avatar workspaces" />
+          <img  className='avatar' src='https://a.slack-edge.com/80588/img/avatars-teams/ava_0023-88.png' alt="avatar workspaces" />
         </div>
         <div className='ContenedorTituloWorkspace'>
         <h2 className='tituloWorkspace'>{title}</h2>

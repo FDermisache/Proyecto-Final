@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './mensajesStyle.css';
 
 const Mensajes = () => {
     const [mensajes, setMensajes] = useState([]);
+
+    useEffect(() => {
+        const mensajesGuardados = JSON.parse(localStorage.getItem('mensajes')) || [];
+        setMensajes(mensajesGuardados);
+    }, []);
+
+    // 2. Guardar los mensajes en localStorage cada vez que cambien
+    useEffect(() => {
+        localStorage.setItem('mensajes', JSON.stringify(mensajes));
+    }, [mensajes]);
     const HandleSubtmit = (evento) => {
         evento.preventDefault();
         const mensajesJSX = evento.target;
@@ -20,7 +30,7 @@ const Mensajes = () => {
             <div>
                 <MsmMap msm={mensajes} />
             </div>
-        <div className='ContenedorMensajes'>
+        <div className='ContenedorMensajesText'>
             <div className='contenedorIconosTop'>
                 <span className='iconosTop'><i class="bi bi-type-bold" title='Negrita'></i></span>
                 <span className='iconosTop'><i class="bi bi-type-italic" title='Cursiva'></i></span>

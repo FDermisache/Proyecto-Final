@@ -1,16 +1,17 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import canales from "./CanalesData";
 import "./canalesStyles.css";
 import Mensajes from "../Mensajes/Mensajes";
 import NewEspacio from "../Espacios/NewEspacio";
+import { use } from "react";
+import "../Mensajes/mensajesStyle.css";
 
 const CanalesFind = () => {
   const { canal_id, titulo } =
     useParams(); /* Agregamos el titulo para desps en las rutas poder acceder a ellos */
   const canal = canales.find((c) => c.id === Number(canal_id));
   const navigate = useNavigate();
-
   useEffect(() => {
     if (!titulo) {
       navigate(`/canales/${canal_id}/general`);
@@ -26,22 +27,30 @@ const CanalesFind = () => {
     <div className="contenedorGeneral">
       <div className="contenedorHeader">
         <header>
-          <span>
-            <i class="bi bi-arrow-left"></i>
-          </span>
-          <span>
-            <i class="bi bi-arrow-right"></i>
-          </span>
-          <label htmlFor="buscar">
-            {" "}
-            <i class="bi bi-search"></i>
-          </label>
-          <input
-            type="text"
-            id="buscar"
-            name="buscar"
-            placeholder="Buscar en"
-          />
+          <div className="Iconos">
+            <span className="iconos1">
+              <i class="bi bi-arrow-left"></i>
+            </span>
+            <span className="iconos1">
+              <i class="bi bi-arrow-right"></i>
+            </span>
+            <span className="iconos1_1">
+              <i class="bi bi-stopwatch"></i>
+            </span>
+          </div>
+          <div className="contenedorBuscar">
+            <label htmlFor="buscar">
+              {" "}
+              <i class="bi bi-search"></i>
+            </label>
+            <input
+              className="input_canales"
+              type="text"
+              id="buscar"
+              name="buscar"
+              placeholder="Buscar en"
+            />
+          </div>
           <div className="contenedorAyuda">
             <i class="bi bi-question-circle"></i>
           </div>
@@ -57,11 +66,12 @@ const CanalesFind = () => {
               {" "}
               <i class="bi bi-caret-down-fill"></i>Canales
             </span>
+
             {/* Mostrar títulos como enlaces */}
             {canal.mensajes.map((chat) => (
               <Link
                 key={chat.id}
-                to={`/canales/${canal_id}/${chat.titulo.substring(1)}`}
+                to={`/canales/${canal_id}/${chat.titulo.substring(1)}/`}
               >
                 {" "}
                 {/* Esto permite que cada título (#general, #utilidades, etc.) sea un enlace que lleve al usuario a una ruta específica, */}
@@ -77,13 +87,19 @@ const CanalesFind = () => {
         </div>
         <div className="contenedorChat">
           <div className="contenedorMensajes">
+            <div>
+              <h1>{chatSeleccionado.titulo}</h1>
+            </div>
             {/* Mostrar mensajes del título seleccionado */}
-            {chatSeleccionado /* Añadí una verificación para renderizar los mensajes del título seleccionado. Si no hay un título (por ejemplo, cuando estás en /canales/1), muestra un mensaje genérico:  */ ? (
+            {chatSeleccionado ? (
               <CanalLista mensajes={chatSeleccionado.mensajes} />
             ) : (
               ""
             )}
+            <div className="contenedorMSM">
             <Mensajes />
+            </div>
+            
           </div>
         </div>
       </div>
@@ -110,9 +126,21 @@ const CanalLista = ({ mensajes }) => {
 const MensajeCanal = ({ nombre, img, hora, mensaje }) => {
   return (
     <div>
-      <h4>{nombre}</h4>
-      <span>{hora}</span>
-      <p>{mensaje}</p>
+      <div className="contenedorMensajePersonalizado">
+        <div className="contenedorUsu">
+          <span className="imgUsu">
+            <img
+              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+              alt="Imagen Usuario"
+            />{" "}
+          </span>
+          <span className="nombreUsuario">{nombre}</span>
+          <span className="horaMensaje">{hora}</span>
+        </div>
+        <div className="contMensaje">
+          <p className="textMensaje">{mensaje}</p>
+        </div>
+      </div>
     </div>
   );
 };

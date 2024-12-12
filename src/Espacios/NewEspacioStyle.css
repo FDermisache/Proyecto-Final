@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+    text-decoration: none;
+}
+
+.contenedorCrearCanal{
+    display: flex;
+    width: 100%;
+    padding-top:20px ;
+    align-items: center;
+    padding-left: 5px;
+    
+}
+
+.botonCrear{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(97, 31, 105);
+    border:none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputCanal{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+::placeholder{
+    color: black;
+    font-size: 15px;
+}
+.cerrar{
+    font-size: 15px;
+    color: white;
+}
+
+.crear{
+    font-size: 15px;
+    color: white;
+    
+}
+
+.nuevoCanal{
+    color: rgb(187, 167, 194);
+    font-size: 19px;
+    margin: 5px 5px 5px 5px;
+    font-weight: 600;
+}
+
+.contenedorCanal{
+    padding-top: 6px;
+}

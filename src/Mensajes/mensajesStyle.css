@@ -11,9 +11,11 @@
 }
 
 
-
-
-.ContenedorMensajes {
+/* body{
+    min-height: 100vh;
+}
+ */
+.ContenedorMensajesText {
     width: 84%;
     height: 120px;
     display: flex;
@@ -24,8 +26,9 @@
     border-radius: 7px;
     margin: 12px 12px 12px 12px;
     position: fixed;
-    bottom: 60px;
+    bottom: 20px;
 }
+
 
 
 .FormMensajes{
@@ -35,6 +38,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .inputMensajes{
@@ -47,7 +51,7 @@
     color: white;
 }
 
-::placeholder{
+.inputMensajes::placeholder{
     color: rgb(87, 89, 87);
 }
 
@@ -162,4 +166,195 @@
     padding: 2px 2px 2px 2px;
     background-color: rgb(47, 50, 54);
     color:rgb(175, 176, 179);
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* MEDIAQUERYES */ 
+
+@media screen and (max-width: 320px) {
+    body{
+        width: 100%;
+    }
+    .contenedorGeneral{
+        width: 100%;
+    }
+    .ContenedorMensajesText{
+        width: 400px;
+        position: absolute;
+        bottom: 0px;
+    }
+
+
+    .input_canales{
+        width: 400px;
+    }
+
+    .bi-search{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    body{
+        width: 100%;
+    }
+    .ContenedorMensajesText{
+        width: 60%;
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .input_canales{
+        width: 600px;
+    }
+    .bi-search{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    body{
+        width: 1000px;
+    }
+    .ContenedorMensajesText{
+        width: 685px;
+        position: absolute;
+        bottom: 0px;
+    }
+    .input_canales{
+        width: 600px;
+    }
+    .bi-search{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        width: 1000px;
+    }
+    .ContenedorMensajesText{
+        width: 685px;
+        position: absolute;
+        bottom: 0px;
+    }
+    
+    .input_canales{
+        width: 600px;
+    }
+    .bi-search{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        width: 1000px;
+        height: 900px;
+    }
+    .contenedorGeneral{
+        width: 1000px;
+        height: 850px;
+        margin-top: 50px;
+    }
+    .ContenedorMensajesText{
+        width: 680px;
+        position: absolute;
+        bottom: 0px;
+    }
+    
+    .input_canales{
+        width: 400px;
+    }
+    .bi-search{
+        display: none;
+    }
+}
+@media screen and (max-width: 1024px) {
+    body{
+        width: 100%;
+        
+    }
+    .contenedorGeneral{
+        width: 100%;
+        height: 100%;
+        
+        background-color: rgb(73, 21, 74);
+    }
+    .ContenedorMensajesText{
+        width: 70%;
+        position: absolute;
+        bottom: 0px;
+    }
+    header{
+        width: 100%;
+        background-color: rgb(73, 21, 74);
+        padding-bottom: 10px;
+        padding-top:10px ;
+    }
+    
+    .bi-search{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    body{
+        width: 100%;
+        height: 100%;
+        
+    }
+    .contenedorGeneral{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(73, 21, 74);
+    }
+    .ContenedorMensajesText{
+        width: 67%;
+        position: absolute;
+        bottom: 0px;
+    }
+    header{
+        background-color: rgb(73, 21, 74);
+        padding-bottom: 10px;
+        padding-top:10px ;
+    }
+    
+    .bi-search{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 2000px) {
+    body{
+        width: 100%;
+        height: 100%;
+        
+    }
+    .contenedorGeneral{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(73, 21, 74);
+    }
+    .ContenedorMensajesText{
+        width: 80%;
+        position: absolute;
+        
+    }
+    header{
+        background-color: rgb(73, 21, 74);
+        padding-bottom: 10px;
+        padding-top:10px ;
+    }
+    
+    .bi-search{
+        display: none;
+    }
+    
 }

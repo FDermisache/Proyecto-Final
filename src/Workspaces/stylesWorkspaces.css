@@ -101,6 +101,15 @@ padding: 4px 0px 0px 0px;
     
 }
 
+.botonCancelar{
+    color: white;
+    background-color:rgb(236, 8, 8);
+    border: none;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -139,6 +148,19 @@ padding: 4px 0px 0px 0px;
 .Vermas{
     font-size: 14px;
     color: #1264a3;
+}
+
+.TituloForm{
+    color: white;
+    font-size: 40px;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+
+.TextEspacio{
+    padding-bottom: 10px;
+    color: white;
+    font-size: 20px;
 }
 
 
@@ -278,6 +300,41 @@ justify-content: start;
 font-weight: 600;
 }
 
+.form-visible{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1264a3;
+    position: absolute;
+    z-index: 1;
+    
+}
+.ContenedorNuevoEspacio{
+    background-color: rgba(128, 128, 128, 0.527);
+    width: 600px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.ContenedorInput .inputForm{
+    width: 400px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.ContenedorBotonAgregar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -301,17 +358,17 @@ font-weight: 600;
         display: none;
     }
     .header{
-        width: 80%;
+        width: 900px;
         justify-content: space-evenly;
     }
     .ContenedorNav{
         display: none;
     }
     .title{
-        width: 80%;
+        width: 700px;
     }
     .ContMailUsu{
-        width: 73.5%;
+        width: 700px;
     }
     .ContenedorWorkspaceItem{
         width: 700px;
@@ -322,13 +379,34 @@ font-weight: 600;
     }
 }
 
-
 @media screen and (max-width: 780px) {
+    *{
+        box-sizing: border-box;
+    }
+    .ContenedorPadre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+    }
+    .ContenedorForm{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+    }
     .title{
         width: 53%;
     }
     .ContMailUsu{
-        width: 52.5%;
+        width: 500px;
     }
     .ContenedorWorkspaceItem{
         width: 500px;
@@ -340,9 +418,67 @@ font-weight: 600;
     .TextSpan{
         width: 500px;
     }
+    
 }
 
+@media screen and (max-width: 760px) {
+    *{
+        box-sizing: border-box;
+    }
+    .ContenedorPadre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+    }
+    .ContenedorForm{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+    }
+    .ContMailUsu{
+        width: 500px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .ContenedorPadre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .ContenedorForm{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+        
+}
+.title{
+    width: 500px;
+}
+}
+
+
 @media screen and (max-width: 575px) {
+    body{
+        width: 1000px;
+    }
     .title{
         width: 300px;
     }
@@ -360,13 +496,19 @@ font-weight: 600;
         width: 300px;
     }
     .header{
-        width: 300px;
+        width: 800px;
         flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
     }
+
     .ContenedorImagenSlack{
         margin-bottom: 10px;
     }
     .botonNew{
+        width: 200px;
         padding: 10px 10px 10px 10px;
         margin-left: 20px;
         display: flex;
@@ -375,6 +517,13 @@ font-weight: 600;
     }
     .avatarWork{
         display: none;
+    }
+    .ContenedorPadre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 1000px;
     }
 }
 
@@ -419,6 +568,13 @@ font-weight: 600;
     .avatarWork{
         display: none;
     }
+    .header{
+        width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
 
 
@@ -513,7 +669,10 @@ font-weight: 600;
         align-items: center;
     }
     .botonNew{
-        margin-right: 30px;
+        margin-right: 80px;
+    }
+    .imgSlack{
+        margin-right: 80px;
     }
     .avatarWork{
         display: none;
